@@ -1,0 +1,311 @@
+/* ================== GLOBAL FONT + BACKGROUND ================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-image: url('https://xsznseejebbai1lj.public.blob.vercel-storage.com/homepage/hero/hero-1.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ================== INTRO SECTION ================== */
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.intro::before { content: none; }
+
+.intro h1 {
+  font-size: 4rem;
+  margin: 10px 0;
+  font-family: 'Great Vibes', cursive;
+}
+
+.intro .and {
+  font-size: 2rem;
+}
+
+.arrow {
+  font-size: 3rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.3s;
+}
+
+.arrow:hover { transform: translateY(10px); }
+
+/* ================== GENERAL SECTION OVERLAY ================== */
+section:not(.intro) {
+  position: relative;
+  text-align: center;
+  padding: 60px 20px;
+  color: #fff;
+  z-index: 1;
+}
+
+section:not(.intro)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+/* ================== HEADINGS ================== */
+h1 { font-size: 48px; margin-bottom: 20px; }
+h2, h3 { font-family: 'Great Vibes', cursive; }
+
+/* ================== CALENDAR ================== */
+.weekday-row,
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 40px);
+  gap: 10px;
+  justify-content: center;
+}
+
+.weekday-row {
+  margin-bottom: 10px;
+  color: #ffd;
+  font-weight: bold;
+}
+
+.day {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  font-family: 'Noto Sans Armenian', sans-serif;
+}
+
+.day.empty { background: none; border: none; box-shadow: none; }
+
+.ring {
+  border: 2px solid #f9e0c6;
+  box-shadow: 0 0 10px #f9e0c6;
+  color: #f9e0c6;
+}
+
+/* ================== SCHEDULE / EVENT PLAN ================== */
+.schedule {
+  padding: 60px 20px;
+  position: relative;
+  text-align: center;
+}
+
+.schedule::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+.schedule h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.schedule-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.schedule-item {
+  background: transparent;
+  border: 1px solid #f9e0c6;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 300px;
+  max-width: 90%;
+}
+
+.schedule-item img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.schedule-item h3 { font-size: 1.3rem; margin-bottom: 10px; }
+.schedule-item .time { font-size: 1.1rem; margin-bottom: 5px; }
+.schedule-item .place { font-size: 1rem; margin-bottom: 10px; }
+
+.schedule-item a,
+.schedule-item .btn {
+  display: inline-block;
+  background-color: #f9e0c6;
+  color: #111;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.schedule-item a:hover,
+.schedule-item .btn:hover {
+  background-color: #f7d49b;
+  transform: translateY(-2px);
+}
+
+.schedule-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(249,224,198,0.5);
+}
+
+/* ================== COUNTDOWN ================== */
+.countdown-timer-container {
+  position: relative;
+  overflow: visible;
+  padding: 60px 20px;
+}
+
+.countdown-timer-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.time-unit{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border: 2px solid #f9e0c6;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.time-value {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #f9e0c6;
+}
+
+.time-label {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #f9e0c6;
+}
+
+/* ================== QR UPLOAD ================== */
+.qr-container {
+  text-align: center;
+  margin-top: 40px;
+  padding: 30px;
+  background: #fffaf3;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.qr-container h3 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.qr-container p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.qr-box {
+  display: inline-block;
+  padding: 8px;
+  background: #ffffff;
+  border: 2px dashed #d4a373;
+  border-radius: 12px;
+}
+
+.qr-box img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  transition: 0.3s;
+}
+
+/* ================== BUTTONS ================== */
+.btn1{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #ffdf5d;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn1:hover {
+  background: #ffe681;
+  transform: scale(1.05);
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 992px) {
+  .circle {
+    width: 100px;
+    height: 100px;
+  }
+  .time-value {
+    font-size: 2.2rem;
+  }
+  .time-label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  section:not(.intro) { padding: 30px 10px; }
+
+  .schedule-container { flex-direction: column; gap: 20px; align-items: center; }
+  .schedule-item { width: 90%; }
+
+  .countdown-container { gap: 15px; }
+  .circle { width: 75px; height: 75px; }
+  .time-value { font-size: 1.6rem; }
+  .time-label { font-size: 12px; }
+}
