@@ -61,7 +61,7 @@ section:not(.intro)::before {
 }
 
 /* ================== HEADINGS ================== */
-h1 { font-size: 48px; margin-bottom: 20px; }
+h1 { font-size: 40px; margin-bottom: 20px; }
 h2, h3 { font-family: 'Great Vibes', cursive; }
 
 /* ================== CALENDAR ================== */
@@ -309,3 +309,4 @@ h2, h3 { font-family: 'Great Vibes', cursive; }
   .time-value { font-size: 1.6rem; }
   .time-label { font-size: 12px; }
 }
+
